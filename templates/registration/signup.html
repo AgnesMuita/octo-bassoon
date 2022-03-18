@@ -1,0 +1,32 @@
+<html>
+{% block content %}
+{%load crispy_forms_tags%}
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <style>
+  .card{
+      border:1px solid;
+      padding:10px;
+      box-shadow: 5px 10px 8px 10px #888888;
+      width:40rem;
+      height:auto;
+      margin:2rem;
+      background-color: white;
+    }
+  </style>
+</head>
+<form method="post" action= '{% url "signup" %}'style="font-face:arial">
+  {% csrf_token %}
+  <div class="card">
+    {{form|crispy}}
+  <input type="submit" value="Register" class="btn btn-primary">
+  <a href="{% url 'login' %}">Back to login</a>
+  <br>
+  <a href="{% url 'home' %}">Back to Home</a>
+  </div>
+  </div>
+
+{% endblock %}
+</html>

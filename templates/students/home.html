@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<html>
+
+<head>
+  <style>
+    body {
+      color: black;
+      text-align: center;
+      background-image: url("https://media.istockphoto.com/photos/tweaking-some-finer-details-in-the-data-picture-id1081869166?b=1&k=20&m=1081869166&s=170667a&w=0&h=2ekyjqZWN0MqIHMp0oGKsm0s92itAaYzMX98y6_zmIQ=");
+      background-position:center;
+      background-repeat: repeat;
+      background-size:cover;
+      position:relative;
+
+    }
+    .card{
+      border:1px solid;
+      padding:20px;
+      box-shadow: 5px 10px 8px 10px #888888;
+      width:60rem;
+      height:auto;
+      margin:10rem;
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero-image">
+  <div class="card">
+    <h1>Hello, {{user.username|default:"Young Techie"}}</h1>
+    <h1 style="font-size: 20px; align-content: center;">Welcome to Tech EQUIP Kenya</h1> 
+    <div style="display: flex; margin-left: auto;" >
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}">Logout</a>
+      {% else %}
+      <a href="{% url 'login' %}" style="padding:2rem;">Login</a>
+      <a href="{% url 'signup' %}" style="padding:2rem;">Signup</a>
+      {% endif %}
+    </div>
+    <br>
+    <p>     
+    Science, technology, engineering and mathematical (STEM) fields are often dominated by men. Through an intensive
+    mentorship program, this project set out to promote and encourage secondary school students in Kenya to choose science
+    career pathways and stay within the sciences.
+    </p>
+    <p>
+    Tech EQUIP Kenya(TEK) seeks to provide STEM opportunities for female students and professionals in Kenya. TEK enables girls
+    and women to build connections in the STEM field through discussions, field-work, and mentoring. These efforts not only
+    add value to each individual’s career, but the STEM projects undertaken also contribute to the alleviation of poverty.
+    </p>
+    <p>
+    TEK is a program specifically for young women in the field of Science and
+    Technology. This includes students and young professionals. The program is implemented by STEM Africa which aims to
+    provide young people in Africa with opportunities and an enabling environment to pursue rich and fulfilling careers and
+    enterprises in Science, Technology, Engineering, and Maths.
+    </p>
+    <p>
+    Working with students: TEK seeks to raise engagement and increase the profile of Science and Technology among young girls. TEK visits girls schools across Kenya to create awareness of and interest in STEM careers, aiming to increase the number of women taking up careers in STEM. At universities they speak at STEM
+    events and encourage female enrollment.
+    </p>
+   
+  </div>
+  </div>
+</body>
+
+</html>
